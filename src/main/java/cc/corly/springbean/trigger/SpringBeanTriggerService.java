@@ -6,7 +6,6 @@ import org.springframework.beans.factory.BeanFactory;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
-import java.util.Locale;
 
 public class SpringBeanTriggerService implements TriggerService{
     private BeanFactory beanFactory;
