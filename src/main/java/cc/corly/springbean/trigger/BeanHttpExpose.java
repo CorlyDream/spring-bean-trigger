@@ -25,8 +25,12 @@ public class BeanHttpExpose extends NanoHTTPD {
     }
 
     public static final BeanHttpExpose build(BeanFactory beanFactory) throws IOException {
+        return build(9009, beanFactory);
+    }
+
+    public static final BeanHttpExpose build(int port, BeanFactory beanFactory) throws IOException {
         TriggerService triggerService = new SpringBeanTriggerService(beanFactory);
-        return build(9000, triggerService);
+        return build(port, triggerService);
     }
 
     public static final BeanHttpExpose build(int port, TriggerService triggerService) throws IOException {
