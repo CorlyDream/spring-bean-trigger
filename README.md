@@ -14,7 +14,7 @@
 <dependency>
   <groupId>cc.corly</groupId>
   <artifactId>spring-bean-trigger</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 </dependency>
 ```
 
@@ -32,4 +32,6 @@ curl --location --request POST 'http://127.0.0.1:9009/demoBean/testCall' \
 --data-raw '["125082"]'
 ```
 
-调用的 url 格式：http://127.0.0.1:9009/{beanName}/{methodName}。post body 中是个字符串数组，对应调用方法的入参
+调用的 url 格式：http://127.0.0.1:9009/{beanName}/{methodName}
+
+post body 中是个字符串数组，对应调用方法的入参

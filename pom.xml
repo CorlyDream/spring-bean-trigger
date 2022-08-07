@@ -6,7 +6,7 @@
 
     <groupId>cc.corly</groupId>
     <artifactId>spring-bean-trigger</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <name>spring-bean-trigger</name>
     <url>https://github.com/CorlyDream/spring-bean-trigger</url>
