@@ -6,7 +6,7 @@
 
     <groupId>cc.corly</groupId>
     <artifactId>spring-bean-trigger</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 
     <name>spring-bean-trigger</name>
     <url>https://github.com/CorlyDream/spring-bean-trigger</url>
@@ -70,6 +70,9 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>2.9.1</version>
+                <configuration>
+                    <excludePackageNames>cc.corly.springbean.trigger.nanohttpd</excludePackageNames>
+                </configuration>
                 <executions>
                     <execution>
                         <phase>package</phase>

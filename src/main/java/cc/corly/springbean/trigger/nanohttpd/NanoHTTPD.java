@@ -52,18 +52,18 @@ import java.util.zip.GZIPOutputStream;
 
 /**
  * A simple, tiny, nicely embeddable HTTP server in Java
- * <p/>
- * <p/>
+ * 
+ * 
  * NanoHTTPD
  * <p>
  * Copyright (c) 2012-2013 by Paul S. Hawke, 2001,2005-2013 by Jarno Elonen,
  * 2010 by Konstantinos Togias
  * </p>
- * <p/>
- * <p/>
+ * 
+ * 
  * <b>Features + limitations: </b>
  * <ul>
- * <p/>
+ * 
  * <li>Only one Java file</li>
  * <li>Java 5 compatible</li>
  * <li>Released as open source, Modified BSD licence</li>
@@ -87,17 +87,17 @@ import java.util.zip.GZIPOutputStream;
  * <li>Contains a built-in list of most common MIME types</li>
  * <li>All header names are converted to lower case so they don't vary between
  * browsers/clients</li>
- * <p/>
+ * 
  * </ul>
- * <p/>
- * <p/>
+ * 
+ * 
  * <b>How to use: </b>
  * <ul>
- * <p/>
+ * 
  * <li>Subclass and implement serve() and embed to your own program</li>
- * <p/>
+ * 
  * </ul>
- * <p/>
+ * 
  * See the separate "LICENSE.md" file for the distribution license (Modified BSD
  * licence)
  */
@@ -286,7 +286,7 @@ public abstract class NanoHTTPD {
 
     /**
      * Default threading strategy for NanoHTTPD.
-     * <p/>
+     * 
      * <p>
      * By default, the server spawns a new Thread for every incoming request.
      * These are set to <i>daemon</i> status, and named according to the request
@@ -332,7 +332,7 @@ public abstract class NanoHTTPD {
 
     /**
      * Default strategy for creating and cleaning up temporary files.
-     * <p/>
+     * 
      * <p>
      * By default, files are created by <code>File.createTempFile()</code> in
      * the directory specified.
@@ -370,7 +370,7 @@ public abstract class NanoHTTPD {
 
     /**
      * Default strategy for creating and cleaning up temporary files.
-     * <p/>
+     * 
      * <p>
      * This class stores its files in the standard location (that is, wherever
      * <code>java.io.tmpdir</code> points to). Files are added to an internal
@@ -480,7 +480,7 @@ public abstract class NanoHTTPD {
 
     protected static class ContentType {
 
-        private static final String ASCII_ENCODING = "US-ASCII";
+        public static final String UTF8_ENCODING = "UTF-8";
 
         private static final String MULTIPART_FORM_DATA_HEADER = "multipart/form-data";
 
@@ -534,7 +534,7 @@ public abstract class NanoHTTPD {
         }
 
         public String getEncoding() {
-            return encoding == null ? ASCII_ENCODING : encoding;
+            return encoding == null ? UTF8_ENCODING : encoding;
         }
 
         public String getBoundary() {
@@ -1734,7 +1734,7 @@ public abstract class NanoHTTPD {
 
     /**
      * A temp file.
-     * <p/>
+     * 
      * <p>
      * Temp files are responsible for managing the actual temporary storage and
      * cleaning themselves up when no longer needed.
@@ -1751,7 +1751,7 @@ public abstract class NanoHTTPD {
 
     /**
      * Temp file manager.
-     * <p/>
+     * 
      * <p>
      * Temp file managers are created 1-to-1 with incoming requests, to create
      * and cleanup temporary files created as a result of handling the request.
@@ -2171,8 +2171,8 @@ public abstract class NanoHTTPD {
 
     /**
      * Override this to customize the server.
-     * <p/>
-     * <p/>
+     * 
+     * 
      * (By default, this returns a 404 "Not Found" plain text error response.)
      * 
      * @param session
@@ -2199,8 +2199,8 @@ public abstract class NanoHTTPD {
 
     /**
      * Override this to customize the server.
-     * <p/>
-     * <p/>
+     * 
+     * 
      * (By default, this returns a 404 "Not Found" plain text error response.)
      * 
      * @param uri

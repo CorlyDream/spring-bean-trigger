@@ -1,12 +1,13 @@
 package cc.corly.springbean.trigger;
 
+import cc.corly.springbean.trigger.nanohttpd.NanoHTTPD;
 import com.alibaba.fastjson.JSON;
-import fi.iki.elonen.NanoHTTPD;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.BeanFactory;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.Map;
 
@@ -55,7 +56,11 @@ public class BeanHttpExpose extends NanoHTTPD {
             List<String> args = JSON.parseArray(postData, String.class);
             Object resp = triggerService.trigger(beanName, methodName, args);
             respStr = JSON.toJSONString(resp);
-        } catch (Exception e) {
+        }catch (InvocationTargetException ite){
+            status = Response.Status.INTERNAL_ERROR;
+            respStr = ite.getTargetException().getMessage();
+            log.error("uri {} postData {}", uri, postData, ite);
+        }catch (Exception e) {
             status = Response.Status.INTERNAL_ERROR;
             respStr = e.getMessage();
             log.error("uri {} postData {}", uri, postData, e);

@@ -33,7 +33,8 @@ package cc.corly.springbean.trigger.nanohttpd.util;
  * #L%
  */
 
-import fi.iki.elonen.NanoHTTPD;
+
+import cc.corly.springbean.trigger.nanohttpd.NanoHTTPD;
 
 import java.io.IOException;
 import java.util.logging.Level;
