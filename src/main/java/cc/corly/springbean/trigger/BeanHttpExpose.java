@@ -16,7 +16,7 @@ import java.util.Map;
  */
 public class BeanHttpExpose extends NanoHTTPD {
     private static final Logger log = LoggerFactory.getLogger(BeanHttpExpose.class);
-    public static final String APPLICATION_JSON = "application/json";
+    public static final String APPLICATION_JSON = "application/json; charset=UTF-8";
     private TriggerService triggerService;
 
     private BeanHttpExpose(int port, TriggerService triggerService) throws IOException {

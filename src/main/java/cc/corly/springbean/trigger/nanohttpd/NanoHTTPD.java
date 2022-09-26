@@ -1791,12 +1791,13 @@ public abstract class NanoHTTPD {
     /**
      * Common MIME type for dynamic content: plain text
      */
-    public static final String MIME_PLAINTEXT = "text/plain";
+    public static final String APPLICATION_JSON = "application/json; charset=UTF-8";
+    public static final String MIME_PLAINTEXT = "text/plain; charset=UTF-8";
 
     /**
      * Common MIME type for dynamic content: html
      */
-    public static final String MIME_HTML = "text/html";
+    public static final String MIME_HTML = "text/html; charset=UTF-8";
 
     /**
      * Pseudo-Parameter to use to store the actual query string in the
